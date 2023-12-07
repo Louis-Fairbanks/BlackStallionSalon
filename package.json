@@ -1,0 +1,21 @@
+{
+  "name": "blackstallionsalon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/local-auth": "^2.1.1",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.10",
+    "express": "^4.18.2",
+    "googleapis": "^105.0.0",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.2"
+  }
+}
