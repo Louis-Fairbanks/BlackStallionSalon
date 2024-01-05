@@ -1,6 +1,6 @@
 .hero{
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-     url('/assets/images/quaint-barbershop-with-eclectic-decor.jpg');
+     url('../assets/images/quaint-barbershop-with-eclectic-decor.jpg');
     background-position: center;
     background-size: cover;
     height: 60vh;
@@ -44,17 +44,41 @@ nav .container {
     margin-top: 4vh;
     font-size: 2rem;
 }
+@media (width< 1000px){
+  #cta-button{
+    font-size: 1.5rem;
+  }
+}
 .carousel-item img{
-    height: 60vh;
+    height: 30%;
 }
 #carousel-wrapper{
   width: 50%;
 }
 .calendar{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   margin: 0 auto 50px auto;
-  width: 75%;
+  width: 90%;
+}
+/* Define the full weekday names for larger screens */
+.row-2.column-1::before { content: "Sunday"; }
+.row-2.column-2::before { content: "Monday"; }
+.row-2.column-3::before { content: "Tuesday"; }
+.row-2.column-4::before { content: "Wednesday"; }
+.row-2.column-5::before { content: "Thursday"; }
+.row-2.column-6::before { content: "Friday"; }
+.row-2.column-7::before { content: "Saturday"; }
+
+/* Change to abbreviated weekday names for smaller screens */
+@media (max-width: 650px) {
+  .row-2.column-1::before { content: "Sun"; }
+  .row-2.column-2::before { content: "Mon"; }
+  .row-2.column-3::before { content: "Tue"; }
+  .row-2.column-4::before { content: "Wed"; }
+  .row-2.column-5::before { content: "Thu"; }
+  .row-2.column-6::before { content: "Fri"; }
+  .row-2.column-7::before { content: "Sat"; }
 }
 .row-1{
   grid-row: 1;
@@ -174,6 +198,17 @@ nav .container {
   margin: 0;
   padding: 0;
 }
+@media(width < 850px){
+  #back-button{
+    margin-right: 50px;
+  }
+  #forward-button{
+    margin-left: 50px;
+  }
+  #month-heading{
+    font-size: 1.5rem;
+  }
+}
 #close-dialog{
   margin-left: 90% !important;
   border: none !important; 
@@ -194,32 +229,24 @@ footer p{
   margin-bottom: 0;
 }
 .card img{
-  width: 25vh;
+  width: 15vmax;
   height: auto;
   margin: 0 auto;
 }
-.clipped-image{
-  clip-path: inset(0 0 51.5% 0);
-}
-#raised-card-body{
-  margin-top: -35%;
-}
 .testimonials .card{
-  margin: auto 30px;
-  height: fit-content;
-  width: 30vw;
   border: 2px solid gray;
   background-color: #ddd9d9;
+  margin: 5px;
 }
 .testimonials .card:hover{
   box-shadow: 0 0 10px 5px rgba(218, 165, 32, 0.5)
 }
 #about-main{
   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-  url('/assets/images/hair-salon-sinks-on-red-brick.jpg');
+  url('../assets/images/hair-salon-sinks-on-red-brick.jpg');
   background-position:bottom;
   background-size: cover;
-  height: 80vh;
+  min-height: 80vh;
   color: white;
 }
 #about-main h1{
@@ -230,14 +257,21 @@ footer p{
   font-size: 1.5rem;
   text-shadow: 1px 1px goldenrod;
 }
-#map { position: absolute; top: 30vh; left: 3vw; width: 50%; height: 50%;}
-#contact-footer{
-  margin-top: 67vh;
+@media (orientation: portrait){
+  #about-main p{
+    padding-bottom: 10vh;
+  }
 }
-#contact-info{
-  position: absolute;
-  right: 5vw;
-  top: 30vh;
+#map {width: 100%; height: 50vh;}
+.flex-body{
+  flex-direction: column;
+  min-height: 100vh;
+}
+.flex-body > section{
+  flex: 1;
+}
+.row{
+  margin: auto 0;
 }
 #products-container{
   display: flex;
@@ -253,32 +287,28 @@ footer p{
 }
 #haircut-example{
   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-  url('/assets/images/haircut-example.jpg');
+  url('../assets/images/haircut-example.jpg');
   background-position: center;
   background-size: cover;
-  height: 220px;
 }
 .mt-2 .card:hover {
   transform: scale(1.025);
 }
 #hair-styling-example{
   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-  url('/assets/images/hair-styling-example.jpg');
+  url('../assets/images/hair-styling-example.jpg');
   background-position: center;
   background-size: cover;
-  height: 220px;
 }
 #makeup-example{
   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-  url('/assets/images/makeup-example.jpg');
+  url('../assets/images/makeup-example.jpg');
   background-position: center;
   background-size: cover;
-  height: 220px;
 }
 #other-services{
   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-  url('/assets/images/dyed-hair.jpg');
+  url('../assets/images/dyed-hair.jpg');
   background-position: center;
   background-size: cover;
-  height: 220px;
 }
