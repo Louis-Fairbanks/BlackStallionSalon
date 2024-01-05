@@ -145,13 +145,15 @@ nav .container {
   cursor: pointer;
 }
 #success-message {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-45%);
+  position: fixed !important;
+  top: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
   animation-duration: 1s;
   background-color: greenyellow;
   z-index: 999999;
+  width:fit-content;
+  text-align: center;
 }
 .hidden{
   display:none;
