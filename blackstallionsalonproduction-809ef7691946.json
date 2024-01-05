@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "blackstallionsalonproduction",
+  "private_key_id": "809ef7691946770eb2d7cf62e52039507c9611a5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCzGIil53zXas45\njiJntv/yPzx/TkoR42RpYzdy/ZfZIozyMI0OEc2/5eqO7SvjbLe44S781TQxfEXn\nLIeGHQWCe9NY4nv/L6JfKveq2TmR4GynopmAMvTmAL+6LqFIsZyyOxayCd090S9m\niFWXrwS5ZVbd3WIA116tNKdIUpLp3We9DK1Y54OHeFBDMyCrvkrsgMWZki0H6TDN\nS7JhuG4YbTxCzYnqjiL3J9z0TnJOx1gWVmq4GJtmZuq54rFocw9cK+uaGR8xLxHQ\ncsbQrU8sICk/6LMWFLnvzt6L8wiKP6f54t9WFhcqKDXYvQWNT7Sb6Zaott6rpxAr\nI7D4JhDfAgMBAAECggEAA3WOBMpSVnopI+JzbAEUXieg3Ff07/XY6tIwRX0mxtph\n0jcO2mk3Sfq/tjqtgNXePJNuNr2gJZ6Ks8WKk+lmlwJw7sQSdLeE/C/rxbXZZKXA\nONgCp/++oYdSggmZiDpqAOVJnG8QAhF9crkKZ4TJY2f/hAcyd+Vbs55okWngODp2\nvxmt8dt/orr2DpFurRcOKwmGhuqX/hi/ti+MOpAmmigyN7KtmFNoK+3G1GhmLBwN\n7Yc8IYtb/+2aUnpLvxHPDjCPmkpXi0s6rmyu9X9C/bZbZh6+FkUEsnEwpgHGFK/v\nmtxKcp4rMdaREmEYi90TLY4mEHmGrBtCiDk0H9j25QKBgQDoSjQlOIrPMvmIn/90\ne/rDbdJbo2tUpgd/i9wVZZyYwKd6PHKIkH5d5oZMbobvMX18wDN6m0T6p485L09F\nHUfEBD4MHxu3WcR+8Rg1oPwrHy9blVSCmZLAe+7pCuxJ4q4iX57w6e+90I1HoHdv\nHjwSC++qed8i8A/PM9unnsgOMwKBgQDFYFsihyT0mHYgagm55opYQORdZpsED592\n464FYn/XKw0bIdjoI32V8WVQCeVTfEtu9CceeEYnPkQCSRgdCx2m0qoQYn8biVSr\nadAxOK4+lS3KGRtx6HKtsEytbwJYXRLt1If0tdeU1yRv5jJSl1TQlDmAmdeaPEun\n8TvmN3lupQKBgQCOfDXQPwamYhY+gCYqRYJkLhFCtNM5cT5YNmohldqguEwC5uE6\nc6eP4b+vUnzia/EVfLAXHPcK6Y0o/qQZOQS0cAW/WbWemim11B2Nh9omeVKLUuYr\n1hf2ig7aVCDskWdPHmhYTqcIP8zpiry4JEukpj20zFzbCXYpGx45i2QbkQKBgQC2\n1snVtGeRheJ3qIMWCPBDTOm/dBtJqcdI9STxrAtNIX5kkfhDIw1lZ1c4y9H6gnvG\nbroGSdiC5fVOQLPrw65WKXSM9RFWSuN6Xu0Ti7QuGTdvrc50uKXzLAv75YfAn4e3\ndVf0YrcwFBSW7CHVzIYvKgASl3DYWd6j1p5sZxtAWQKBgQCUbZbb+8raZV5EkOyC\nEvRMGN4NZ2rz4gfoBOs9V9asv3/lrOKWynlZryaM+PTP8lNp/vEreVwz2bfp9XE2\n1/aXg3qHZk7rwzaFHjUvlmFxg+SFgxt3nmCTEa2jzA1ilPtMZsuGuTn0zzRwh32f\nWmeXq+Ya51/cB8/knKMwqPmHxw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "booking-service-account@blackstallionsalonproduction.iam.gserviceaccount.com",
+  "client_id": "102330260222955464487",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/booking-service-account%40blackstallionsalonproduction.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
