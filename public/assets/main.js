@@ -3,7 +3,7 @@ let trackedDate = new Date();
 let selectedDate;
 async function fetchEvents(currentDate){
   const jsonDate = JSON.stringify(currentDate)
-  const response = await fetch('http://localhost:3000/events', {
+  const response = await fetch('https://blackstallionsalonbackend.onrender.com/events', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -85,6 +85,9 @@ while (span !== null && span.tagName === 'SPAN') {
 }
 
 const fetchAndCreateCalendar = async () => {
+  // Show the spinner
+  document.getElementById('spinner').style.display = 'block';
+
   document.getElementById('month-heading').innerText = trackedDate.toLocaleString('default', { month: 'long' });
   await fetchEvents(trackedDate);
   createCalendar();
@@ -93,6 +96,9 @@ const fetchAndCreateCalendar = async () => {
     element.addEventListener('click', createBookingForm);
   });
   document.getElementById('close-dialog').addEventListener('click', closeBookingForm)
+
+  // Hide the spinner
+  document.getElementById('spinner').style.display = 'none';
 }
 
 window.onload = function() {
@@ -107,7 +113,7 @@ backButton.addEventListener('click', backOneMonth)
 const createBookingForm = async (event) => {
   selectedDate = new Date(trackedDate.getFullYear(), trackedDate.getMonth(), event.target.innerText)
   let blockedTimes;
-  const fetchURL = 'http://localhost:3000/events/' + event.target.innerText
+  const fetchURL = 'https://blackstallionsalonbackend.onrender.com/events/' + event.target.innerText
   await fetch(fetchURL).then(response => response.json()).then(data => blockedTimes = data);
 
   const timeSelector = document.getElementById('time-selector');
@@ -158,7 +164,7 @@ async function handleSubmit(event){
     phone: phone
   };
 
-  const fetchURL = 'http://localhost:3000/events/' + selectedDate.toISOString();
+  const fetchURL = 'https://blackstallionsalonbackend.onrender.com/events/' + selectedDate.toISOString();
   let res = await fetch(fetchURL, {
   method: 'POST',
   headers: {

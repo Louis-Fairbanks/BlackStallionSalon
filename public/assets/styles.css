@@ -49,6 +49,17 @@ nav .container {
     font-size: 1.5rem;
   }
 }
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  .hero h1{
+    font-size: 3rem !important;
+  }
+  .hero p{
+    font-size: 1.5rem !important;
+  }
+  #cta-button{
+    font-size: 1.5rem !important;
+  }
+}
 .carousel-item img{
     height: 30%;
 }
@@ -313,4 +324,26 @@ footer p{
   url('../assets/images/dyed-hair.jpg');
   background-position: center;
   background-size: cover;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  margin: 0 auto;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
