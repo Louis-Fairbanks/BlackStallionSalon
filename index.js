@@ -52,11 +52,18 @@ async function listEvents(firstDayOfMonth, firstDayOfNextMonth) {
     orderBy: 'startTime',
   });
   const events = res.data.items;
-  const allDays = []
+  const allDays = [];
+  const currentDate = new Date();
+  const currentTime = currentDate.getTime();
   events.map((event) => {
     if (event.start.date) {
       return
     } else if (event.start.dateTime) {
+      let eventDate = new Date(event.start.dateTime);
+      const eventTime = eventDate.getTime();
+      if(eventTime < currentTime){
+        return;
+      }
       let availableDay = {
         date: event.start.dateTime.slice(8, 10),
         summary: event.summary

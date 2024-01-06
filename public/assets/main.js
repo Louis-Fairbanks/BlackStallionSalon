@@ -3,7 +3,7 @@ let trackedDate = new Date();
 let selectedDate;
 async function fetchEvents(currentDate){
   const jsonDate = JSON.stringify(currentDate)
-  const response = await fetch('https://blackstallionsalonbackend.onrender.com/events', {
+  const response = await fetch('http://localhost:3000/events', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -107,7 +107,7 @@ backButton.addEventListener('click', backOneMonth)
 const createBookingForm = async (event) => {
   selectedDate = new Date(trackedDate.getFullYear(), trackedDate.getMonth(), event.target.innerText)
   let blockedTimes;
-  const fetchURL = 'https://blackstallionsalonbackend.onrender.com/events/' + event.target.innerText
+  const fetchURL = 'http://localhost:3000/events/' + event.target.innerText
   await fetch(fetchURL).then(response => response.json()).then(data => blockedTimes = data);
 
   const timeSelector = document.getElementById('time-selector');
@@ -158,7 +158,7 @@ async function handleSubmit(event){
     phone: phone
   };
 
-  const fetchURL = 'https://blackstallionsalonbackend.onrender.com/events/' + selectedDate.toISOString();
+  const fetchURL = 'http://localhost:3000/events/' + selectedDate.toISOString();
   let res = await fetch(fetchURL, {
   method: 'POST',
   headers: {
