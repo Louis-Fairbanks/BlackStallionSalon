@@ -303,6 +303,7 @@ footer p{
   url('../assets/images/haircut-example.jpg');
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 .mt-2 .card:hover {
   transform: scale(1.025);
@@ -319,12 +320,14 @@ footer p{
   url('../assets/images/makeup-example.jpg');
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 #other-services{
   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
   url('../assets/images/dyed-hair.jpg');
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .loader {
