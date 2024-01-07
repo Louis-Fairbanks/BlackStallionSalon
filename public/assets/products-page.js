@@ -1,14 +1,28 @@
 // Preload product data on window load
 let productData;
 window.onload = () => {
-    fetch('https://blackstallionsalonbackend.onrender.com/products')
-      .then(response => response.json())
-      .then(data => {
-        productData = data;
-        displayProducts(data);
-        loadImages();
-      });
-  };
+  let timeoutId = setTimeout(() => {
+    const productsContainer = document.querySelector('#products-container');
+    const message = document.createElement('h3');
+    message.classList.add('text-center', 'mt-5');
+    message.id = 'loadingMessage';
+    message.textContent = "It seems this site hasn't had many visitors lately and the Render node spun down. Please refresh the page in 1-2 minutes while the node spins back up.";
+    productsContainer.appendChild(message);
+  }, 2000); 
+
+  fetch('https://blackstallionsalonbackend.onrender.com/products')
+    .then(response => response.json())
+    .then(data => {
+      clearTimeout(timeoutId);  // Clear the timeout if data is loaded within 2 seconds
+      const message = document.getElementById('loadingMessage');
+      if (message) {
+        message.remove();  // Remove the message
+      }
+      productData = data;
+      displayProducts(data);
+      loadImages();
+    });
+};
   
   // Display product cards
   function displayProducts(products) {
