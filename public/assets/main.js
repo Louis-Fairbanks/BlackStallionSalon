@@ -107,6 +107,11 @@ const fetchAndCreateCalendar = async () => {
 
   // Call createCalendar() to populate the calendar with the fetched data
   createCalendar();
+  const openDays = document.getElementsByClassName('open');
+  Array.from(openDays).forEach(element => {
+    element.addEventListener('click', createBookingForm);
+  });
+  document.getElementById('close-dialog').addEventListener('click', closeBookingForm)
 
   // Hide the spinner
   document.getElementById('spinner').style.display = 'none';
@@ -125,6 +130,7 @@ let backButton = document.getElementById('back-button')
 backButton.addEventListener('click', backOneMonth)
 
 const createBookingForm = async (event) => {
+  console.log('called')
   selectedDate = new Date(trackedDate.getFullYear(), trackedDate.getMonth(), event.target.innerText)
   let blockedTimes;
   const fetchURL = 'https://blackstallionsalonbackend.onrender.com/events/' + event.target.innerText
