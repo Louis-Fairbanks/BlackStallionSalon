@@ -211,7 +211,7 @@ nav .container {
   margin: 0;
   padding: 0;
 }
-@media(width < 850px){
+@media(width < 1000px){
   #back-button{
     margin-right: 50px;
   }
@@ -219,7 +219,7 @@ nav .container {
     margin-left: 50px;
   }
   #month-heading{
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 #close-dialog{
@@ -346,4 +346,13 @@ footer p{
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.loader + h4{
+  display: absolute;
+  width: 45vw;
+  left: 33%;
+  transform: translateX(-33%);
+  text-align: center;
+  font-size: 1rem;
 }

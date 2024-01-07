@@ -1,7 +1,7 @@
 let monthInfo;
 let trackedDate = new Date();
 let selectedDate;
-async function fetchEvents(currentDate){
+async function fetchEvents(currentDate) {
   const jsonDate = JSON.stringify(currentDate)
   const response = await fetch('https://blackstallionsalonbackend.onrender.com/events', {
     method: 'POST',
@@ -9,7 +9,7 @@ async function fetchEvents(currentDate){
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      currentDate : jsonDate
+      currentDate: jsonDate
     }),
   });
   const data = await response.json();
@@ -24,33 +24,33 @@ const createCalendar = () => {
   let currentRow = 3;
   let column = monthInfo.weekdayOfFirstDay
   const placeholder = document.getElementById('placeholder')
-  for(let i = 0; i < column; i++){
+  for (let i = 0; i < column; i++) {
     let newSpan = document.createElement('span');
     newSpan.classList.add('row-3');
     newSpan.classList.add('column-' + i);
     placeholder.insertAdjacentElement('afterend', newSpan);
   }
-  for (let i = 1; i <= monthInfo.daysInMonth; i++){
+  for (let i = 1; i <= monthInfo.daysInMonth; i++) {
     let newSpan = document.createElement('span');
-    if(column == 7){
+    if (column == 7) {
       currentRow++;
     }
-    if (column > 7){
+    if (column > 7) {
       column = column % 7;
     }
     column++;
     newSpan.classList.add('row-' + currentRow)
     newSpan.classList.add('column-' + column)
     newSpan.innerText = i;
-    if(availableDays.includes(i)){
+    if (availableDays.includes(i)) {
       newSpan.classList.add('open')
-    }else{newSpan.classList.add('closed')}
+    } else { newSpan.classList.add('closed') }
     placeholder.insertAdjacentElement('afterend', newSpan)
   }
-  if(column == 8){
+  if (column == 8) {
     column = 2;
   }
-  for(let i = column; i < 8; i++){
+  for (let i = column; i < 8; i++) {
     let newSpan = document.createElement('span');
     newSpan.classList.add('row-' + currentRow);
     newSpan.classList.add('column-' + i);
@@ -62,11 +62,11 @@ const forwardOneMonth = async () => {
   const placeholder = document.getElementById('placeholder')
   let span = placeholder.nextElementSibling;
 
-while (span !== null && span.tagName === 'SPAN') {
-  const nextSpan = span.nextElementSibling;
-  placeholder.parentNode.removeChild(span);
-  span = nextSpan;
-}
+  while (span !== null && span.tagName === 'SPAN') {
+    const nextSpan = span.nextElementSibling;
+    placeholder.parentNode.removeChild(span);
+    span = nextSpan;
+  }
   trackedDate.setMonth(trackedDate.getMonth() + 1, 1)
   fetchAndCreateCalendar()
 }
@@ -75,11 +75,11 @@ const backOneMonth = async () => {
   const placeholder = document.getElementById('placeholder')
   let span = placeholder.nextElementSibling;
 
-while (span !== null && span.tagName === 'SPAN') {
-  const nextSpan = span.nextElementSibling;
-  placeholder.parentNode.removeChild(span);
-  span = nextSpan;
-}
+  while (span !== null && span.tagName === 'SPAN') {
+    const nextSpan = span.nextElementSibling;
+    placeholder.parentNode.removeChild(span);
+    span = nextSpan;
+  }
   trackedDate.setMonth(trackedDate.getMonth() - 1, 1)
   fetchAndCreateCalendar()
 }
@@ -88,20 +88,34 @@ const fetchAndCreateCalendar = async () => {
   // Show the spinner
   document.getElementById('spinner').style.display = 'block';
 
+  let messageh4 = document.querySelector('.loader + h4');
+  if (!messageh4) {
+    // If it doesn't exist, create it
+    messageh4 = document.createElement('h4');
+    messageh4.textContent = 'If this spinner is still here after 3 seconds, please refresh the page in 1-2 minutes. Render \n nodes spin down with periods of inactivity and take time to spin back up.';
+  }
+
+  let timeoutId = setTimeout(() => {
+    document.querySelector('.loader').insertAdjacentElement('afterend', messageh4);
+  }, 3000)
+
   document.getElementById('month-heading').innerText = trackedDate.toLocaleString('default', { month: 'long' });
   await fetchEvents(trackedDate);
+  
+  // Clear the timeout
+  clearTimeout(timeoutId);
+
+  // Call createCalendar() to populate the calendar with the fetched data
   createCalendar();
-  const openDays = document.getElementsByClassName('open');
-  Array.from(openDays).forEach(element => {
-    element.addEventListener('click', createBookingForm);
-  });
-  document.getElementById('close-dialog').addEventListener('click', closeBookingForm)
 
   // Hide the spinner
   document.getElementById('spinner').style.display = 'none';
+  if (document.querySelector('.loader + h4')) {
+    document.querySelector('.loader + h4').remove();
+  }
 }
 
-window.onload = function() {
+window.onload = function () {
   fetchAndCreateCalendar();
 };
 
@@ -144,12 +158,12 @@ const createBookingForm = async (event) => {
   dialog.showModal();
 }
 
-const closeBookingForm = () =>{
+const closeBookingForm = () => {
   const dialog = document.getElementById('booking-dialog')
   dialog.close()
 }
 
-async function handleSubmit(event){
+async function handleSubmit(event) {
   event.preventDefault();
 
   const service = document.getElementById('service-dropdown').value;
@@ -166,15 +180,15 @@ async function handleSubmit(event){
 
   const fetchURL = 'https://blackstallionsalonbackend.onrender.com/events/' + selectedDate.toISOString();
   let res = await fetch(fetchURL, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(formData)
-})
-if(res.status === 200){
-  showSuccessMessage()
-}else console.log('Fatal error')
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+  if (res.status === 200) {
+    showSuccessMessage()
+  } else console.log('Fatal error')
 }
 
 const submitButton = document.getElementById('submit-button');
@@ -199,7 +213,7 @@ function showSuccessMessage() {
 
 const form = document.getElementById("booking-form");
 
-form.addEventListener("submit", function(event) {
+form.addEventListener("submit", function (event) {
   if (!form.checkValidity()) {
     event.preventDefault();
     // Display an error message or perform any other action
