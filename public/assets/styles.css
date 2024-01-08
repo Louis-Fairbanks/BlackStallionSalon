@@ -1,6 +1,6 @@
 .hero{
     background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-     url('../assets/images/quaint-barbershop-with-eclectic-decor.jpg');
+     url('../assets/images/quaint-barbershop-with-eclectic-decor-min.jpg');
     background-position: center;
     background-size: cover;
     height: 60vh;
@@ -256,7 +256,7 @@ footer p{
 }
 #about-main{
   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-  url('../assets/images/hair-salon-sinks-on-red-brick.jpg');
+  url('../assets/images/hair-salon-sinks-on-red-brick-min.jpg');
   background-position:bottom;
   background-size: cover;
   min-height: 80vh;
@@ -310,21 +310,21 @@ footer p{
 }
 #hair-styling-example{
   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-  url('../assets/images/hair-styling-example.jpg');
+  url('../assets/images/hair-styling-example-min.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 #makeup-example{
   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-  url('../assets/images/makeup-example.jpg');
+  url('../assets/images/makeup-example-min.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 #other-services{
   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-  url('../assets/images/dyed-hair.jpg');
+  url('../assets/images/dyed-hair-min.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
